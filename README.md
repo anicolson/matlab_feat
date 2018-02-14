@@ -21,12 +21,12 @@ H = melfbank(26, x.NFFT/2 + 1, fs); *% mel filter banks.* <br /> <br />
 *%% MFCCs* <br />
 x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <br />
 
-##### The structure elements of 'x' include:
+##### The elements of struct 'x' include:
 
 
-*x.frm - framing & windowing.*
-*x.MAG - single-sided short-time magnitude spectrum.*
-*x.PSD - single-sided short-time power spectral density.*
-*x.SSE - spectral suband energy.*
-*x.LSSE - log spectral suband energy.*
-*x.MFCC - mel frequency cepstral coefficients.*
+*x.frm - framing & windowing.* <br />
+*x.MAG - single-sided short-time magnitude spectrum.* <br />
+*x.PSD - single-sided short-time power spectral density.* <br />
+*x.SSE - spectral suband energy.* <br />
+*x.LSSE - log spectral suband energy.* <br />
+*x.MFCC - mel frequency cepstral coefficients.* <br />
