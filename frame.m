@@ -7,7 +7,7 @@ function x = frame(x, Nw, Ns)
 %	Ns - frame shift (samples).
 %
 % Outputs:
-%	x - framed and windowed version of the input signal.
+%	x - framed and windowed version of the input sequence.
 
 %% FILE:           frame.m 
 %% DATE:           2017
