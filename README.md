@@ -1,6 +1,15 @@
 # matlab_feat
 ##### Digital Signal Processing (DSP) functions for creating Automatic Speech Recognition (ASR) features in MATLAB.
 
+Feature | Description
+--------| -----------
+ MAG | Magnitude spectrum
+ PSD | Power Spectral Density
+ MFCC | Mel frequency cepstral coefficients
+ LSSE | Log filterbank energies
+ SSC | Spectral Subband Centroids
+
+
 ## MFCC Example:
 
 *%% SINGLE-CHANNEL SEQUENCE PATH* <br />
