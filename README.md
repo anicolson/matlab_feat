@@ -3,13 +3,13 @@
 
 ## MFCC Example:
 
-*%% SINGLE-CHANNEL SEQUENCE PATH*
-seq_path = 'path_to_sequence'; *% path to the location of the audio sequence.*
+*%% SINGLE-CHANNEL SEQUENCE PATH* <br />
+seq_path = 'path_to_sequence'; *% path to the location of the audio sequence.* <br /> <br />
 
-*%% PARAMETERS*
-Tw = 32 *% window length (ms).*
-Ts = 16 *% window shift (ms).*
-x.Nw = round(fs*Tw*0.001); *% window length (samples).*
+*%% PARAMETERS* <br />
+Tw = 32 *% window length (ms).* <br />
+Ts = 16 *% window shift (ms).* <br />
+x.Nw = round(fs*Tw*0.001); *% window length (samples).* <br />
 x.Ns = round(fs*Ts*0.001); *% window shift (samples).*
 x.fs = 16000; *% sampling frequency (Hz).*
 x.NFFT = 2^nextpow2(x.Nw); *% frequency bins (samples).*
