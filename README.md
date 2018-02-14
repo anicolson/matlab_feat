@@ -23,10 +23,9 @@ x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <
 
 ##### The elements of struct 'x' include:
 
-
 *x.frm - framed & windowed sequence.* <br />
 *x.MAG - single-sided short-time magnitude spectrum.* <br />
 *x.PSD - single-sided short-time power spectral density.* <br />
-*x.SSE - spectral suband energy.* <br />
-*x.LSSE - log spectral suband energy.* <br />
+*x.SSE - spectral suband energies.* <br />
+*x.LSSE - log spectral suband energies.* <br />
 *x.MFCC - mel frequency cepstral coefficients.* <br />
