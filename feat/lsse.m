@@ -13,7 +13,7 @@ function x = lsse(x, H)
 %	x.frm - framing & windowing.
 %	x.MAG - single-sided short-time magnitude spectrum.
 %	x.PSD - single-sided short-time power spectral density.
-%	x.SSE - spectral suband energy.
+%	x.SSE - spectral suband energies.
 %	x.LSSE - log spectral suband energies.
 
 %% FILE:           lsse.m 
