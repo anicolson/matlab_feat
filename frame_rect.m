@@ -1,5 +1,5 @@
 function x = frame_rect(x, Nw, Ns)
-% FRAME - signal framing.
+% FRAME - sequence framing.
 %
 % Inputs:
 %	x - input signal.
@@ -7,13 +7,13 @@ function x = frame_rect(x, Nw, Ns)
 %	Ns - frame shift (samples).
 %
 % Outputs:
-%	x - framed version of the input signal.
+%	x - framed version of the input sequence.
 
 %% FILE:           frame_rect.m 
 %% DATE:           2017
 %% AUTHOR:         Aaron Nicolson
 %% AFFILIATION:    Signal Processing Laboratory, Griffith University
-%% BRIEF:          Signal framing.
+%% BRIEF:          Sequence framing.
 x = buffer(x(:), Nw, Nw - Ns, 'nodelay');
 end
 %% EOF
