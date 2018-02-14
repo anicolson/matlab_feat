@@ -18,7 +18,7 @@ x.NFFT = 2^nextpow2(x.Nw); *% frequency bins (samples).* <br /> <br />
 *%% MEL-SCALED FILTER BANK* <br />
 H = melfbank(26, x.NFFT/2 + 1, fs); *% mel filter banks.* <br /> <br />
 
-%% MFCCs <br />
+*%% MFCCs* <br />
 x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <br />
 
 *% x.MFCC will give the feature matrix.* <br />
