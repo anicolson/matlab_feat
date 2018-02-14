@@ -1,5 +1,5 @@
 function x = mag(x)
-% MAG - magnitude spectrum of a signal.
+% MAG - computes the single-sided short-time magnitude spectrum of a sequence.
 %
 % Inputs:
 %	x.wav - input sequence.
@@ -9,7 +9,7 @@ function x = mag(x)
 %
 % Outputs:
 %	x.frm - framing & windowing.
-%	x.MAG - magnitude spectrum.
+%	x.MAG - signle-sided short-time magnitude spectrum.
 
 %% FILE:           mag.m 
 %% DATE:           2017
@@ -18,7 +18,7 @@ function x = mag(x)
 %% BRIEF:          Computes the magnitude spectrum of a waveform.
 
 x.frm = frame(x.wav, x.Nw, x.Ns); % framing & windowing.
-x.MAG = abs(fft(x.frm, x.NFFT, 2)); % magnitude spectrum.
-x.MAG = x.MAG(:,1:x.NFFT/2 + 1); % single-sided magnitude spectrum.
+x.MAG = abs(fft(x.frm, x.NFFT, 2)); % short-time magnitude spectrum.
+x.MAG = x.MAG(:,1:x.NFFT/2 + 1); % single-sided short-time magnitude spectrum.
 end
 %% EOF
