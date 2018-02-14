@@ -5,7 +5,7 @@ Feature | Description
 --------| -----------
  MAG | Magnitude spectrum
  PSD | Power Spectral Density
- MFCC | Mel frequency cepstral coefficients
+ MFCC | Mel Frequency Cepstral Coefficients
  LSSE | Log Spectral Subband Energies
  SSC | Spectral Subband Centroids
 
