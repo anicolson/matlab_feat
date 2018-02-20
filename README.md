@@ -20,7 +20,7 @@ seq_path = 'path_to_sequence'; *% path to the location of the audio sequence.* <
 *%% PARAMETERS* <br />
 x.fs = 16000; *% sampling frequency (Hz).* <br />
 x.Nw = 512; *% window length (samples). This is for a 32 ms window.* <br />
-x.Ns = 256; *% window shift (samples). This is for a 16 ms shift* <br />
+x.Ns = 256; *% window shift (samples). This is for a 16 ms shift.* <br />
 x.NFFT = 2^nextpow2(x.Nw); *% frequency bins (samples).* <br /> <br />
 
 *%% SINGLE-CHANNEL SEQUENCE* <br />
