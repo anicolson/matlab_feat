@@ -29,7 +29,7 @@ x.NFFT = 2^nextpow2(x.Nw); *% frequency bins (samples).* <br /> <br />
 *%% MEL-SCALED FILTER BANK* <br />
 H = melfbank(26, x.NFFT/2 + 1, fs); *% mel filter banks.* <br /> <br />
 
-*%% MFCCs* <br />
+*%% MFCC* <br />
 x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <br />
 
 ##### The elements of struct 'x' include:
