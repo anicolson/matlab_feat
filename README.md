@@ -3,14 +3,17 @@
 
 Feature | Description
 --------| -----------
- STMS | Magnitude spectrum
+ STMS | Short-Time Magnitude Spectrum
  PSD | Power Spectral Density
- MFCC | Mel Frequency Cepstral Coefficients
- LSSE | Log Spectral Subband Energies
+ MFCC | Mel-Frequency Cepstral Coefficients
+ LSSE | Log-Spectral Subband Energies
  SSC | Spectral Subband Centroids
 
-##### LSSEs are equivalent to Log Filter Bank Energies (LFBE).
+##### Note: LSSEs are equivalent to Log Filter Bank Energies (LFBE).
 
+
+## References
+[1] [Nicolson, A., Hanson, J., Lyons, J. and Paliwal, K., 2018. Spectral Subband Centroids for Robust Speaker Identification using Marginalization-based Missing Feature Theory. International Journal of Signal Processing Systems, 6(1), pp.12-16.](https://maxwell.ict.griffith.edu.au/spl/publications/papers/icsps17_aaron.pdf)
 
 ## MFCC Example:
 
@@ -35,8 +38,8 @@ x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <
 ##### The elements of struct 'x' include:
 
 *x.frm - framed & windowed sequence.* <br />
-*x.MAG - single-sided short-time magnitude spectrum.* <br />
+*x.STMS - single-sided short-time magnitude spectrum.* <br />
 *x.PSD - single-sided short-time power spectral density.* <br />
 *x.SSE - spectral suband energies.* <br />
-*x.LSSE - log spectral suband energies.* <br />
-*x.MFCC - mel frequency cepstral coefficients.* <br />
+*x.LSSE - log-spectral suband energies.* <br />
+*x.MFCC - mel-frequency cepstral coefficients.* <br />
