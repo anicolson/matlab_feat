@@ -1,5 +1,5 @@
 # matlab_feat
-##### Digital Signal Processing (DSP) functions for creating Automatic Speech Recognition (ASR) features in MATLAB. Features included:
+##### Digital Signal Processing (DSP) functions for creating Automatic Speech Recognition (ASR) features in MATLAB. Equations to compute the features can be found in  [[1]](https://maxwell.ict.griffith.edu.au/spl/publications/papers/icsps17_aaron.pdf). Features included:
 
 Feature | Description
 --------| -----------
@@ -12,8 +12,7 @@ Feature | Description
 ##### Note: LSSEs are equivalent to Log Filter Bank Energies (LFBE).
 
 
-## References
-[1] [Nicolson, A., Hanson, J., Lyons, J. and Paliwal, K., 2018. Spectral Subband Centroids for Robust Speaker Identification using Marginalization-based Missing Feature Theory. International Journal of Signal Processing Systems, 6(1), pp.12-16.](https://maxwell.ict.griffith.edu.au/spl/publications/papers/icsps17_aaron.pdf)
+
 
 ## MFCC Example:
 
@@ -43,3 +42,7 @@ x = mfcc(x, H); *% compute Mel Frequency Cepstral Coefficients (MFCC).* <br /> <
 *x.SSE - spectral suband energies.* <br />
 *x.LSSE - log-spectral suband energies.* <br />
 *x.MFCC - mel-frequency cepstral coefficients.* <br />
+
+
+## References
+[1] [Nicolson, A., Hanson, J., Lyons, J. and Paliwal, K., 2018. Spectral Subband Centroids for Robust Speaker Identification using Marginalization-based Missing Feature Theory. International Journal of Signal Processing Systems, 6(1), pp.12-16.](https://maxwell.ict.griffith.edu.au/spl/publications/papers/icsps17_aaron.pdf)
