@@ -3,7 +3,7 @@
 
 Feature | Description
 --------| -----------
- MAG | Magnitude spectrum
+ STMS | Magnitude spectrum
  PSD | Power Spectral Density
  MFCC | Mel Frequency Cepstral Coefficients
  LSSE | Log Spectral Subband Energies
