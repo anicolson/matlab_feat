@@ -21,7 +21,7 @@ function x = psd(x)
 
 % NOTE: all single-sided components are multiplied by 2 to conserve total power,
 % except for the DC component (0) and the Nyquist frequency component (NFFT/2 + 1).
-	x = mag(x); % single-sided Short-Time Magnitude Spectrum (STMS).
+	x = stms(x); % single-sided Short-Time Magnitude Spectrum (STMS).
 	x.PSD = (1/(x.Nw*x.fs))*x.STMS.^2; % single-sided short-time Power Spectral Density (PSD).
 	x.PSD(:, 2:end-1) = 2*x.PSD(:, 2:end-1); % single-sided short-time Power Spectral Density (PSD).
 end
