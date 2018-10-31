@@ -1,36 +1,35 @@
-function [H, bl, bh] = melfbank(M, NFFT, fs)
-% MELFBANK - creates triangular mel filter banks.
+function [H, bl, bh] = melfbank(M, N, fs)
+% MELFBANK - creates triangular mel-scale filterbanks.
 %
 % Inputs:
 %   M - number of filterbanks.
-%   NFFT - is the length of each filter (NFFT/2 + 1 typically).
+%   N - is the length of each filter (NFFT/2 + 1 typically).
 %   fs - sampling frequency.
 %
 % Outputs:
 %   H - triangular mel filterbank matrix.
-%	bl - lower boundary point frequencies.
-%	hl - higher boundary point frequencies.
+%	  bl - lower boundary point frequencies.
+%	  hl - higher boundary point frequencies.
 %
 %% FILE:           melfbank.m 
-%% DATE:           2017
+%% DATE:           2018
 %% AUTHOR:         Aaron Nicolson
 %% AFFILIATION:    Signal Processing Laboratory, Griffith University
-%% BRIEF:          Computes triangular mel filter banks.
+%% BRIEF:          Computes triangular mel-scale filterbanks.
 %% REFERENCE: 
 %	Huang, X., Acero, A., Hon, H., 2001. Spoken Language Processing: 
 % A guide to theory, algorithm, and system development. 
 % Prentice Hall, Upper Saddle River, NJ, USA (pp. 315).
-
   fl = 0; % lowest frequency (Hz).
   fh = fs/2; % highest frequency (Hz).
-  H = zeros(M, NFFT); % mel filter bank.
+  H = zeros(M, N); % mel filter bank.
   bl = zeros(1, M); % lower boundary point bin numbers.
   bh = zeros(1, M); % higher boundary point bin numbers.
   for m = 1:M
-    bl(m) = bpoint(m - 1, M, NFFT, fs, fl, fh); % lower boundary point, f(m - 1) for m-th filterbank.
-    c = bpoint(m, M, NFFT, fs, fl, fh); % m-th filterbank centre point, f(m).
-    bh(m) = bpoint(m + 1, M, NFFT, fs, fl, fh); % higher boundary point f(m + 1) for m-th filterbank.
-    for k = 0:NFFT-1
+    bl(m) = bpoint(m - 1, M, N, fs, fl, fh); % lower boundary point, f(m - 1) for m-th filterbank.
+    c = bpoint(m, M, N, fs, fl, fh); % m-th filterbank centre point, f(m).
+    bh(m) = bpoint(m + 1, M, N, fs, fl, fh); % higher boundary point f(m + 1) for m-th filterbank.
+    for k = 0:N-1
       if k >= bl(m) && k <= c
         H(m,k+1)=(k - bl(m))/(c - bl(m)); % m-th filterbank up-slope. 
       end
@@ -39,6 +38,6 @@ function [H, bl, bh] = melfbank(M, NFFT, fs)
       end
     end
   end
-  bl = (bl*(fs/2)/NFFT); % convert lower boundary points from bin number to frequency.
-  bh = (bh*(fs/2)/NFFT); % convert higher boundary points from bin number to frequency.
+  bl = (bl*(fs/2)/N); % convert lower boundary points from bin number to frequency.
+  bh = (bh*(fs/2)/N); % convert higher boundary points from bin number to frequency.
 end

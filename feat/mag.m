@@ -1,5 +1,5 @@
-function x = mag(x)
-% MAG - computes the single-sided short-time magnitude spectrum of a sequence.
+function x = stms(x)
+% STMS - computes the single-sided Short-Time Magnitude Spectrum (STMS) of a sequence.
 %
 % Inputs:
 %	x.wav - input sequence.
@@ -9,16 +9,14 @@ function x = mag(x)
 %
 % Outputs:
 %	x.frm - framing & windowing.
-%	x.MAG - signle-sided short-time magnitude spectrum.
+%	x.STMS - signle-sided Short-Time Magnitude Spectrum (STMS).
 
-%% FILE:           mag.m 
-%% DATE:           2017
+%% FILE:           stms.m 
+%% DATE:           2018
 %% AUTHOR:         Aaron Nicolson
 %% AFFILIATION:    Signal Processing Laboratory, Griffith University
-%% BRIEF:          Computes the magnitude spectrum of a waveform.
-
-x.frm = frame(x.wav, x.Nw, x.Ns); % framing & windowing.
-x.MAG = abs(fft(x.frm, x.NFFT, 2)); % short-time magnitude spectrum.
-x.MAG = x.MAG(:,1:x.NFFT/2 + 1); % single-sided short-time magnitude spectrum.
+%% BRIEF:          Computes the single-sided Short-Time Magnitude Spectrum (STMS) of a sequence.
+	x.frm = frame(x.wav, x.Nw, x.Ns); % framing & windowing.
+	x.STMS = abs(fft(x.frm, x.NFFT, 2)); % Short-Time Magnitude Spectrum (STMS).
+	x.STMS = x.STMS(:,1:x.NFFT/2 + 1); % single-sided Short-Time Magnitude Spectrum (STMS).
 end
-%% EOF

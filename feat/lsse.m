@@ -1,5 +1,5 @@
 function x = lsse(x, H)
-% LSSE - log spectral subband energies of a sequence.
+% LSSE - Log-Spectral Suband Energies (LSSE) of a sequence.
 %
 % Inputs:
 %	x.wav - input sequence.
@@ -11,19 +11,17 @@ function x = lsse(x, H)
 %
 % Outputs:
 %	x.frm - framing & windowing.
-%	x.MAG - single-sided short-time magnitude spectrum.
-%	x.PSD - single-sided short-time power spectral density.
-%	x.SSE - spectral suband energies.
-%	x.LSSE - log spectral suband energies.
+%	x.MAG - single-sided Short-Time Magnitude Spectrum (STMS).
+%	x.PSD - single-sided short-time Power Spectral Density (PSD).
+%	x.SSE - Spectral Suband Energies (SSE).
+%	x.LSSE - Log-Spectral Suband Energies (LSSE).
 
 %% FILE:           lsse.m 
-%% DATE:           2017
+%% DATE:           2018
 %% AUTHOR:         Aaron Nicolson
 %% AFFILIATION:    Signal Processing Laboratory, Griffith University
-%% BRIEF:          Computes the Log Spectral Subband Energies (LSSE) of a sequence.
-
-x = psd(x); % compute single-sided short-time power spectral density.
-x.SSE = x.PSD*H'; % spectral suband energies.
-x.LSSE = log(x.SSE); % log spectral suband energies.
+%% BRIEF:          Computes the Log-Spectral Suband Energies (LSSE) of a sequence.
+	x = psd(x); % compute single-sided short-time Power Spectral Density (PSD).
+	x.SSE = x.PSD*H'; % Spectral Suband Energies (SSE).
+	x.LSSE = log(x.SSE); % Log-Spectral Suband Energies (LSSE).
 end
-%% EOF

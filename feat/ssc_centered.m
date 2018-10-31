@@ -1,5 +1,5 @@
 function x = ssc_centered(x, H, bl, bh)
-% SSC - centered spectral subband centroids of a sequence.
+% SSC - centered Spectral Subband Centroids (SSC) of a sequence.
 %
 % Inputs:
 %	x.wav - input sequence.
@@ -13,19 +13,17 @@ function x = ssc_centered(x, H, bl, bh)
 %
 % Outputs:
 %	x.frm - framing & windowing.
-%	x.MAG - single-sided short-time magnitude spectrum.
-%	x.PSD - single-sided short-time power spectral density.
-%	x.SSC - spectral subband centroids.
+%	x.STMS - single-sided Short-Time Magnitude Spectrum (STMS).
+%	x.PSD - single-sided short-time Power Spectral Density (PSD).
+%	x.SSC - centered Spectral Subband Centroids (SSC).
 
 %% FILE:           ssc.m 
-%% DATE:           2017
+%% DATE:           2018
 %% AUTHOR:         Aaron Nicolson
 %% AFFILIATION:    Signal Processing Laboratory, Griffith University
 %% BRIEF:          Computes centered Spectral Subband Centroids (SSCs).
-
-x = psd(x); % single-sided short-time power spectral density.
-f = linspace(0, x.fs/2, x.NFFT/2 + 1); % frequency bins (Hz), size 1xK.
-x.SSC = ((f.*x.PSD)*H')./(x.PSD*H'); % spectral suband centroids.
-x.SSC = bsxfun(@rdivide, bsxfun(@minus, x.SSC, bl), bh - bl); % centering.
+	x = psd(x); % single-sided short-time Power Spectral Density (PSD).
+	f = linspace(0, x.fs/2, x.NFFT/2 + 1); % frequency bins (Hz), size 1xK.
+	x.SSC = ((f.*x.PSD)*H')./(x.PSD*H'); % Spectral Suband Centroids (SSC).
+	x.SSC = bsxfun(@rdivide, bsxfun(@minus, x.SSC, bl), bh - bl); % centering.
 end
-%% EOF
